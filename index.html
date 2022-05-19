@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">type to search images</h1>
+      <div class="wrapper">
+        <div class="search">
+          <input type="search" placeholder="Serach items..." id="search-box" />
+          <div class="icon">
+            <i class="fas fa-search" id="fa-search"></i>&nbsp;
+
+            <i class="fa fa-plus" aria-hidden="true" id="plus"></i>
+          </div>
+        </div>
+      </div>
+
+      <span id="rel" align="center"> </span>
+      <span id="result" align="center"> </span>
+
+      <div class="image-container" id="data">
+        <div class="image" data-title="cute">
+          <img src="images/cute-1.jpg" alt="" />
+          <h3>cute animal</h3>
+        </div>
+
+        <div class="image" data-title="car">
+          <img src="images/car-1.jpg" alt="" />
+          <h3>modern car</h3>
+        </div>
+
+        <div class="image" data-title="food">
+          <img src="images/food-1.jpg" alt="" />
+          <h3>tasty food</h3>
+        </div>
+
+        <div class="image" data-title="city">
+          <img src="images/city-1.jpg" alt="" />
+          <h3>huge city</h3>
+        </div>
+
+        <div class="image" data-title="food">
+          <img src="images/food-2.jpg" alt="" />
+          <h3>tasty food</h3>
+        </div>
+
+        <div class="image" data-title="car">
+          <img src="images/car-2.jpg" alt="" />
+          <h3>modern car</h3>
+        </div>
+
+        <div class="image" data-title="cute">
+          <img src="images/cute-2.jpg" alt="" />
+          <h3>cute animal</h3>
+        </div>
+
+        <div class="image" data-title="food">
+          <img src="images/food-3.jpg" alt="" />
+          <h3>tasty food</h3>
+        </div>
+
+        <div class="image" data-title="cute">
+          <img src="images/cute-3.jpg" alt="" />
+          <h3>cute animal</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let plus = document.querySelector("#plus");
+      let searchBox = document.querySelector("#search-box");
+      let images = document.querySelectorAll(
+        ".container .image-container .image"
+      );
+
+      searchBox.oninput = () => {
+        images.forEach((hide) => (hide.style.display = "none"));
+        let value = searchBox.value;
+        images.forEach((filter) => {
+          let title = filter.getAttribute("data-title");
+          if (value == title) {
+            filter.style.display = "block";
+          }
+          if (searchBox.value == "") {
+            filter.style.display = "block";
+          }
+        });
+      };
+
+      plus.addEventListener(
+        "click",
+        (add = () => {
+          var randomImage = [
+            "images/onion curry.jpg",
+            "images/potato curry.jpg",
+            "images/chicken roast.jpg",
+            "images/falooda.jpg",
+          ];
+
+          for (i = 0; i < randomImage.length; i++) {
+            var number = Math.floor(Math.random() * randomImage.length);
+            document.getElementById("rel").innerHTML = randomImage[number];
+            document.getElementById("result").innerHTML =
+              '<img src="' +
+              randomImage[number] +
+              '" style="width:500px" height="400px"/>';
+          }
+          document.getElementById("data").style.display = "none";
+        })
+      );
+    </script>
+  </body>
+</html>
