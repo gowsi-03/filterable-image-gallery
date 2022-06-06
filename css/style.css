@@ -78,7 +78,7 @@ body{
   cursor: pointer;
 }
 #fa-search{
-  margin-left: -35px;
+  margin-left: -5px;
 }
 #result{
   display: flex;
@@ -100,7 +100,7 @@ body{
   width: 100%;
   object-fit: cover;
   margin-bottom: 10px;
-  border:2px solid #000;
+  
 }
 
 .container .image-container .image h3{
