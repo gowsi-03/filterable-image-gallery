@@ -24,7 +24,8 @@
             <i class="fas fa-search" id="fa-search"></i>&nbsp;
 
             <i class="fa fa-plus" aria-hidden="true" id="plus"></i>
-          </div>
+          </div> 
+          <i class="fa fa-random" onclick="window.location.reload()" id="fa-refresh"></i>
         </div>
       </div>
 
@@ -32,49 +33,49 @@
       <span id="result" align="center"> </span>
 
       <div class="image-container" id="data">
-        <div class="image" data-title="cute">
+        <div class="image" data-title="panda" data-value="pa" data-value1="p">
           <img src="images/cute-1.jpg" alt="" />
-          <h3>cute animal</h3>
+          <h3>Panda</h3>
         </div>
 
-        <div class="image" data-title="car">
+        <div class="image" data-title="car" data-value="ca" data-value1="c">
           <img src="images/car-1.jpg" alt="" />
-          <h3>modern car</h3>
+          <h3>Car</h3>
         </div>
 
-        <div class="image" data-title="food">
+        <div class="image" data-title="bur" data-value="bu" data-value1="food">
           <img src="images/food-1.jpg" alt="" />
-          <h3>tasty food</h3>
+          <h3>Burger</h3>
         </div>
 
-        <div class="image" data-title="city">
+        <div class="image" data-title="city" data-value="ci" data-value1="c">
           <img src="images/city-1.jpg" alt="" />
-          <h3>huge city</h3>
+          <h3>City</h3>
         </div>
 
-        <div class="image" data-title="food">
+        <div class="image" data-title="pi" data-value="p" data-value1="food">
           <img src="images/food-2.jpg" alt="" />
-          <h3>tasty food</h3>
+          <h3>Pizza</h3>
         </div>
 
-        <div class="image" data-title="car">
+        <div class="image" data-title="car" data-value="ca" data-value1="c">
           <img src="images/car-2.jpg" alt="" />
-          <h3>modern car</h3>
+          <h3>BMW</h3>
         </div>
 
-        <div class="image" data-title="cute">
+        <div class="image" data-title="cute" data-value="ca" data-value1="c">
           <img src="images/cute-2.jpg" alt="" />
           <h3>cute animal</h3>
         </div>
 
-        <div class="image" data-title="food">
+        <div class="image" data-title="food" data-value="ch" data-value1="chi">
           <img src="images/food-3.jpg" alt="" />
-          <h3>tasty food</h3>
+          <h3>Chicken</h3>
         </div>
 
-        <div class="image" data-title="cute">
+        <div class="image" data-title="animal" data-value="ca" data-value1="cat">
           <img src="images/cute-3.jpg" alt="" />
-          <h3>cute animal</h3>
+          <h3>Cat</h3>
         </div>
       </div>
     </div>
@@ -91,10 +92,15 @@
         let value = searchBox.value.toLowerCase();
         images.forEach((filter) => {
           let title = filter.getAttribute("data-title");
+          let dataValue = filter.getAttribute("data-value");
+          let dataValue1 = filter.getAttribute("data-value1");
           if (value == title) {
             filter.style.display = "block";
-          }
-          if (searchBox.value == "") {
+          } else if (searchBox.value == "") {
+            filter.style.display = "block";
+          } else if (searchBox.value == dataValue) {
+            filter.style.display = "block";
+          } else if (searchBox.value == dataValue1) {
             filter.style.display = "block";
           }
         });

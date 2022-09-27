@@ -1,27 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 
-*{
-   font-family: 'Montserrat', sans-serif;
-   margin:0; padding:0;
-   box-sizing: border-box;
-   outline: none; border:none;
-   text-decoration: none;
-   text-transform: capitalize;
-   transition: all .2s linear;
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
 }
 
-body{
-  background-color: #eee;
+body {
+  background-image: url("https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?w=1380&t=st=1664262122~exp=1664262722~hmac=b3fe7e98331fcc0f44865f7f3381c2e72e196a732d5def562a874c2730e10531");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
-.container{
-  padding:25px 10%;
+.container {
+  padding: 25px 10%;
   text-align: center;
 }
 
-.container .heading{
+.container .heading {
   font-size: 30px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  padding-top: 25px;
 }
 
 .wrapper {
@@ -29,22 +35,24 @@ body{
   margin: 12px auto;
 }
 
-.container .image-container{
+.container .image-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap:20px;
+  gap: 20px;
   padding-top: 30px;
 }
 
-.container .image-container .image{
-  padding:15px;
-  background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0,0,0,.1);
-  border:2px solid #000;
+.container .image-container .image {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
   width: 350px;
-  border-radius: 5px;
-  animation: fadeIn .2s linear;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  animation: fadeIn 0.2s linear;
 }
 .search {
   background: #fff;
@@ -77,49 +85,55 @@ body{
   color: #644bff;
   cursor: pointer;
 }
-#fa-search{
+#fa-refresh {
+  position: absolute;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+  margin-top: 17px;
+}
+#fa-search {
   margin-left: -5px;
 }
-#result{
+#result {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap:20px;
+  gap: 20px;
   padding-top: 30px;
   border-radius: 5px;
 }
 @keyframes fadeIn {
-  0%{
-    transform: scale(.5) translateY(-10px);
+  0% {
+    transform: scale(0.5) translateY(-10px);
     opacity: 0;
   }
 }
 
-.container .image-container .image img{
+.container .image-container .image img {
   height: 250px;
   width: 100%;
   object-fit: cover;
   margin-bottom: 10px;
-  
 }
 
-.container .image-container .image h3{
+.container .image-container .image h3 {
   font-size: 20px;
 }
 
-@media (max-width:768px){
-  .container #search-box{
+@media (max-width: 768px) {
+  .container #search-box {
     width: 100%;
   }
 }
 
-@media (max-width:450px){
-
-  .container{
-    padding:25px 20px;
+@media (max-width: 450px) {
+  .container {
+    padding: 25px 20px;
   }
 
- .image-container .image{
+  .image-container .image {
     width: 100%;
   }
 }
